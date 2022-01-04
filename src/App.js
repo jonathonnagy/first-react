@@ -1,22 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-
+import MyfirstComponent from './MyFirstComponent'
+const myFirstVariable = 'this is my first variable';
+const myFirstClassNameInReact = 'mfcnir';
+const htmlForApp = <button>Send</button>;
+const handleClicEvent = (e) => {
+  console.log('Button clicked!')
+  console.log(e.target.innerHTML)
+};
+const addAnotherHTML = buttonText => {
+  return <button>{buttonText}</button>
+}
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>My first jsx element</div>
+        <div>{myFirstVariable}</div>
+        <div className={myFirstClassNameInReact}>My first className Element</div>
+        {htmlForApp}
+        {addAnotherHTML('Save')}
+        <MyfirstComponent />
+        <MyfirstComponent />
+        <MyfirstComponent />
+        <MyfirstComponent />
+        <button onClick={handleClicEvent}>Click Me</button>
       </header>
     </div>
   );
